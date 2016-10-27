@@ -1,0 +1,166 @@
+###################################################
+###### Mestre #####################################
+###################################################
+# git check-ignore -v *
+# git status
+# cat .git/info/exclude
+# git ls-files --others --exclude-from=.gitignore
+#
+# If the pattern does not contain a slash /, Git treats it as a shell glob pattern and checks for a match against the pathname relative to the location of the .gitignore file (relative to the toplevel of the work tree if not from a .gitignore file).
+
+ide/
+cover.out
+cover.html
+maphome.png
+archive/
+web/
+#cache/
+#kb/
+
+#/src/lib/angular*.js
+node_modules
+.DS_Store
+npm-debug.log
+
+web/src/lib/Cesium
+web/src/lib/Cesium.min.js
+web/src/lib/ol3cesium-debug.js
+web/src/lib/ol3cesium.js
+web/.build-artefacts
+
+
+
+
+
+
+web/src/lib/angular*
+web/src/lib/Cesium*
+web/src/lib/ol3*
+web/src/lib/proj*
+ol3-cesium-plugin
+web/test/lib
+
+/node_modules
+/externs/angular.js
+/externs/jquery.js
+/src/deps.js
+/src/style/app.css
+/src/index.html
+/src/mobile.html
+/src/embed.html
+/src/TemplateCacheModule.js
+/prd
+/.build-artefacts
+/apache/app.conf
+/test/karma-conf-*.js
+/deploy/deploy-branch.cfg
+/src/locales/*.csv
+/scripts/00-*.conf
+/src/lib/Cesium/Assets/Textures/NaturalEarthII
+/src/lib/Cesium/Assets/Textures/SkyBox
+/src/lib/Cesium/Assets/Textures/maki
+/src/lib/Cesium/Assets/Textures/moonSmall.jpg
+/src/lib/Cesium/Assets/Textures/pin.svg
+/src/lib/Cesium/Widgets
+/re3-translations.json
+rc_branch
+
+
+##############
+
+
+
+#/src/lib/angular*.js
+node_modules
+.DS_Store
+npm-debug.log
+
+src/lib/Cesium
+src/lib/andular*
+src/lib/Cesium*
+src/lib/ol3*
+src/lib/proj*
+ol3-cesium-plugin
+test/lib
+
+/node_modules
+/externs/angular.js
+/externs/jquery.js
+/src/deps.js
+/src/style/app.css
+/src/index.html
+/src/mobile.html
+/src/embed.html
+/src/TemplateCacheModule.js
+/prd
+/.build-artefacts
+/apache/app.conf
+/test/karma-conf-*.js
+/deploy/deploy-branch.cfg
+/src/locales/*.csv
+/scripts/00-*.conf
+/src/lib/Cesium/Assets/Textures/NaturalEarthII
+/src/lib/Cesium/Assets/Textures/SkyBox
+/src/lib/Cesium/Assets/Textures/maki
+/src/lib/Cesium/Assets/Textures/moonSmall.jpg
+/src/lib/Cesium/Assets/Textures/pin.svg
+/src/lib/Cesium/Widgets
+/re3-translations.json
+rc_branch
+
+# FIXME
+# The following are developer-specific and should probably be in the
+# developers' .gitconfig file.
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# Jetbrains
+.idea
+*.iml
+
+# Vim swap files
+*.swp
+*.pyc
+
+######### from github
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Folders
+_obj
+_test
+
+# Architecture specific extensions/prefixes
+*.[568vq]
+[568vq].out
+
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+
+_testmain.go
+
+*.exe
+*.test
+*.prof
+
