@@ -11,7 +11,7 @@ run() {
   esac
 }
 
-if [[ $OSTYPE == linux* ]]; then 
+if [[ $OSTYPE != linux* ]]; then 
 	echo not running Linux
 	exit 1
 fi
