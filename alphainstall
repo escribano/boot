@@ -36,15 +36,15 @@ apt update && sudo apt upgrade -y
 username="ademir"
 userhome="/home/$username"
 
-#useradd -m $username -s /bin/bash
-#mkdir "$userhome/.ssh"
+run useradd -m $username -s /bin/bash
+mkdir "$userhome/.ssh"
 
 #pubkey="https://geo.maphome.io/setup/rsa.pub"
 pubkey="https://raw.githubusercontent.com/escribano/boot/master/key/win/id_rsa.pub"
-curl -s $pubkey
-#curl -s $pubkey >> "$userhome/.ssh/authorized_keys"
-#chmod 700 "$userhome/.ssh"
-#chmod 600 "$userhome/.ssh/authorized_keys"
-#chown -R $username.$username $userhome
-#echo "$username ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/maphome-setup
-#chmod 0440 /etc/sudoers.d/maphome-setup
+#curl -s $pubkey
+curl -s $pubkey >> "$userhome/.ssh/authorized_keys"
+chmod 700 "$userhome/.ssh"
+chmod 600 "$userhome/.ssh/authorized_keys"
+chown -R $username.$username $userhome
+echo "$username ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/maphome-setup
+chmod 0440 /etc/sudoers.d/maphome-setup
