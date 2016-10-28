@@ -36,7 +36,7 @@ apt update && sudo apt upgrade -y
 username="ademir"
 userhome="/home/$username"
 
-run useradd -m $username -s /bin/bash
+useradd -m $username -s /bin/bash
 mkdir "$userhome/.ssh"
 
 #pubkey="https://geo.maphome.io/setup/rsa.pub"
