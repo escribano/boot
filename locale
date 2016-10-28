@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euf -o pipefail
+#set -euf -o pipefail
 
 # curl -s https://raw.githubusercontent.com/escribano/boot/master/locale | bash
 
