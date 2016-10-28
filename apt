@@ -24,7 +24,7 @@ then
 fi
 
 apt update && sudo apt upgrade -y
-#run sudo apt install build-essential unzip
+run sudo apt install build-essential unzip
 #run apt -qq list xfsprogs xfsdump nmap sysbench bonnie++ lsscsi rcconf
 #curl git unzip -y
 #sudo apt install xfsprogs xfsdump nmap -y
