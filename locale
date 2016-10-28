@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#set -euf -o pipefail
+set -euf -o pipefail
 
 # curl -s https://raw.githubusercontent.com/escribano/boot/master/locale | bash
 
@@ -10,8 +10,8 @@
 #  exit 1
 #fi
 
-#sudo locale-gen en_US.UTF-8 pt_BR.UTF-8
-#sudo update-locale LANG=en_US.UTF-8
+sudo locale-gen en_US.UTF-8 pt_BR.UTF-8
+sudo update-locale LANG=en_US.UTF-8
 #sudo service postgresql restart
 
-echo 'end'
+#echo 'end'
