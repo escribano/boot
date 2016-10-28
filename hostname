@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euf -o pipefail
+
+# curl -s https://raw.githubusercontent.com/escribano/boot/master/hostname | sudo bash /dev/stdin alpha
+
+if [[ $# -eq 0 ]] ; then
+    echo 'No argument supplied'
+    exit 1
+fi
+
+if [[ $OSTYPE != linux* ]]; then 
+	echo not running Linux
+	exit 1
+fi
+
+host="$1"
+echo $host | sudo tee /etc/hostname
+echo "127.0.0.1 $host" | sudo tee -a /etc/hosts
+sudo service hostname restart
