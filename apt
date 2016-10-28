@@ -32,19 +32,9 @@ run sudo apt install build-essential unzip
 #sudo apt install lsscsi -y
 #sudo apt install rcconf -y
 
+#sudo userdel -r ademir
 
-username="ademir"
-userhome="/home/$username"
-
-useradd -m $username -s /bin/bash
-mkdir "$userhome/.ssh"
-
-#pubkey="https://geo.maphome.io/setup/rsa.pub"
-pubkey="https://raw.githubusercontent.com/escribano/boot/master/key/win/id_rsa.pub"
-#curl -s $pubkey
-curl -s $pubkey >> "$userhome/.ssh/authorized_keys"
-chmod 700 "$userhome/.ssh"
-chmod 600 "$userhome/.ssh/authorized_keys"
-chown -R $username.$username $userhome
-echo "$username ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/maphome-setup
-chmod 0440 /etc/sudoers.d/maphome-setup
+sudo mkfs.ext4 /dev/xvdm
+sudo mkdir -p /vol/home/ademir
+echo "/dev/xvdm /home/ademir ext4 defaults, noatime, nodiratime, nobarrier 0 0" | sudo tee -a /etc/fstab
+sudo mount /home/ademir

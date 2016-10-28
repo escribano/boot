@@ -36,6 +36,7 @@ fi
 username="ademir"
 userhome="/home/$username"
 
+#useradd -m ademir -s /bin/bash
 useradd -m $username -s /bin/bash
 mkdir "$userhome/.ssh"
 
@@ -46,5 +47,5 @@ curl -s $pubkey >> "$userhome/.ssh/authorized_keys"
 chmod 700 "$userhome/.ssh"
 chmod 600 "$userhome/.ssh/authorized_keys"
 chown -R $username.$username $userhome
-echo "$username ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/maphome-setup
-chmod 0440 /etc/sudoers.d/maphome-setup
+#echo "$username ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/maphome-setup
+#chmod 0440 /etc/sudoers.d/maphome-setup
