@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euf -o pipefail
+
+# curl -s https://raw.githubusercontent.com/escribano/boot/master/locale | sudo bash
+
+# Check that we are superuser (i.e. $(id -u) is zero)
+if (( $(id -u) ))
+then
+  echo "This script needs to run as root"
+  exit 1
+fi
+
+sudo locale-gen en_US.UTF-8 pt_BR.UTF-8
+sudo update-locale LANG=en_US.UTF-8
+#sudo service postgresql restart
+
+

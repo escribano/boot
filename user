@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+set -euf -o pipefail
+
+# curl -s https://raw.githubusercontent.com/escribano/boot/master/user | sudo bash
+
+run() {
+  printf %s "run: $*? " > /dev/tty
+  read -n 1 answer < /dev/tty
+  case $answer in
+    [yY]*) eval "$@";;
+  esac
+}
+
+if [[ $OSTYPE != linux* ]]; then 
+	echo not running Linux
+	exit 1
+fi
+
+# Check that we are superuser (i.e. $(id -u) is zero)
+if (( $(id -u) ))
+then
+  echo "This script needs to run as root"
+  exit 1
+fi
+
+#apt update && sudo apt upgrade -y
+#run sudo apt install build-essential unzip
+#run apt -qq list xfsprogs xfsdump nmap sysbench bonnie++ lsscsi rcconf
+#curl git unzip -y
+#sudo apt install xfsprogs xfsdump nmap -y
+#sudo apt install sysbench bonnie++ -y
+#sudo apt install lsscsi -y
+#sudo apt install rcconf -y
+
+
+username="ademir"
+userhome="/home/$username"
+
+useradd -m $username -s /bin/bash
+mkdir "$userhome/.ssh"
+
+#pubkey="https://geo.maphome.io/setup/rsa.pub"
+pubkey="https://raw.githubusercontent.com/escribano/boot/master/key/win/id_rsa.pub"
+#curl -s $pubkey
+curl -s $pubkey >> "$userhome/.ssh/authorized_keys"
+chmod 700 "$userhome/.ssh"
+chmod 600 "$userhome/.ssh/authorized_keys"
+chown -R $username.$username $userhome
+echo "$username ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/maphome-setup
+chmod 0440 /etc/sudoers.d/maphome-setup

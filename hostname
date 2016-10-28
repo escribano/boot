@@ -16,4 +16,6 @@ fi
 host="$1"
 echo $host | sudo tee /etc/hostname
 echo "127.0.0.1 $host" | sudo tee -a /etc/hosts
-sudo service hostname restart
+#sudo service hostname restart
+sudo hostname $host
+#sudo hostname -F /etc/hostname
