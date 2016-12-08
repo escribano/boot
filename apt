@@ -31,10 +31,4 @@ run sudo apt install build-essential unzip
 #sudo apt install sysbench bonnie++ -y
 #sudo apt install lsscsi -y
 #sudo apt install rcconf -y
-
-#sudo userdel -r ademir
-
-sudo mkfs.ext4 /dev/xvdm
-sudo mkdir -p /vol/home/ademir
-echo "/dev/xvdm /home/ademir ext4 defaults, noatime, nodiratime, nobarrier 0 0" | sudo tee -a /etc/fstab
-sudo mount /home/ademir
+#sudo apt install xfsdump nmap sysbench bonnie++ lsscsi rcconf
