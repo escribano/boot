@@ -1,3 +1,7 @@
+String occurrences "charset=utf-8" or "encoding=utf-8"
+Ademir Moreno Escribano
+São Paulo
+
 # boot
 
 # tty 1 - geo
