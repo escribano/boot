@@ -12,6 +12,7 @@ ssh -o ServerAliveInterval=120 alpha.maphome.io
 sudo -u maphome shp2pgsql -d -t 2D -N abort -I -s 31983 -W LATIN1 /var/lib/maphome/inbox/empfase-20160503/RMBS_EMPR_29-04-16_region.shp inbox.empfase_20160503_31983 | sudo -u maphome psql -d maphome
 
 # tty 3 - win - sync
+cd /d/code/go/src/github.com/escribano
 rsync --exclude=.git --exclude=webmap/test --exclude=webmap/src/lib --delete --filter=":- .gitignore" -avhe ssh /d/code/go/src/github.com/escribano alpha.maphome.io:code/local/go/src/github.com/
 
 # tty 4 - win - make hs
